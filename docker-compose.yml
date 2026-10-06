@@ -1,0 +1,13 @@
+# SaúdeTech Dashboards — ambiente do laboratório
+# Subir:   docker compose up --build
+# Parar:   Ctrl+C  (ou docker compose down)
+# Acessar: http://localhost:8080
+services:
+  painel:
+    build: .
+    ports:
+      - "8080:10000"
+    env_file:
+      - .env            # credenciais do banco (NÃO vai para o GitHub)
+    volumes:
+      - ./:/var/www/html  # edições no VS Code aparecem na hora (é só recarregar a página)

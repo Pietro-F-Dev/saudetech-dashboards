@@ -1,0 +1,5 @@
+.env
+*.bak
+*.zip
+vendor/
+.vscode/
