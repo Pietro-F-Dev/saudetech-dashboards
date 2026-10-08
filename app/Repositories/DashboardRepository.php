@@ -61,8 +61,17 @@ class DashboardRepository
     public function meuIndicador(): array
     {
         return $this->consultar("
-            SELECT 'Substitua esta consulta' AS rotulo,
-                   0                         AS valor
+            SELECT
+            ict.descricao AS item_checklist,
+            ict.categoria,
+            COUNT(*) AS vezes_nao_conforme
+            FROM itens_vistoria iv
+            INNER JOIN itens_checklist_template ict
+            ON iv.item_template_id = ict.id
+            WHERE iv.status = 'nao_conforme'
+            GROUP BY ict.id, ict.descricao, ict.categoria
+            ORDER BY vezes_nao_conforme DESC
+            LIMIT 10
         ");
     }
 }
