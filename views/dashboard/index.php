@@ -6,9 +6,9 @@
 //        'doughnut' (rosca) ou 'pie' (pizza)
 // =============================================================================
 $configMeuIndicador = [
-    'titulo'   => 'Meu indicador',
-    'pergunta' => 'Qual pergunta este gráfico responde?',
-    'tipo'     => 'bar',
+    'titulo'   => 'Indicador I10',
+    'pergunta' => 'Quais itens do checklist são mais reprovados?',
+    'tipo'     => 'barh',
 ];
 // =============================================================================
 
